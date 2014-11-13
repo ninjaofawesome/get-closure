@@ -9,30 +9,61 @@ $(document).ready(function(){
     var whoIsIt = showTheCode('Hannah');
 
     function sayHello(whoIsIt){
-      $('button').click(function(){
+      $('.first-closure').click(function(){
         console.log(whoIsIt);
       });
     }
     sayHello(whoIsIt);
   };
 
-  function showCode(myFirstClosure){
-    var myFunc = myFirstClosure;
+  function mySecondClosure(){
+    console.log('whee');
+    function myTurtle(myTurt){
+      $("input:radio[name=turtles]").click(function() {
+          var value = $(this).attr('id');
+          console.log(value);
+          if(value == 'turtleLove'){
+            console.log('Turtles are awesome!');
+          }
+          if(value == 'noTurtleLove'){
+            console.log('Turtles Suck!');
+          }
+      });
+    };
+    myTurtle($('form#turtleForm'));
+  }
 
-    function whoAmI(myFunc){
-      $('button').click(function(){
+
+
+  function showCode(myFirstClosure, mySecondClosure){
+    var showMyWork = myFirstClosure;
+    var superFunc = mySecondClosure;
+    // console.log(superFunc);
+
+    function whoLikesTurtles(superFunc){
+      $('.second-closure').click(function(){
+         $('.closure-two').toggle('slow', function(){
+          $(this).fadeIn().html('<pre>' + superFunc + '</pre>');
+        });
+
+      });
+    }
+
+
+    function whoAmI(showMyWork){
+      $('.first-closure').click(function(){
         $('.closure').toggle('slow', function(){
-          $(this).fadeIn().html('<pre>' + myFunc + '</pre>');
+          $(this).fadeIn().html('<pre>' + showMyWork + '</pre>');
         });
       });
     }
 
-    whoAmI(myFunc);
-
+    whoAmI(showMyWork);
+    whoLikesTurtles(superFunc);
   }
 
 
-  showCode(myFirstClosure);
+  showCode(myFirstClosure, mySecondClosure);
 });
 
 
