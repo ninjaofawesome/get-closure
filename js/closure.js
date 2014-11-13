@@ -13,7 +13,7 @@ $(document).ready(function(){
         console.log(whoIsIt);
       });
     }
-    sayHello(whoIsIt);
+    return sayHello(whoIsIt);
   };
 
   function mySecondClosure(){
@@ -30,7 +30,7 @@ $(document).ready(function(){
           }
       });
     };
-    myTurtle($('form#turtleForm'));
+    return myTurtle($('form#turtleForm'));
   }
 
 
@@ -38,7 +38,6 @@ $(document).ready(function(){
   function showCode(myFirstClosure, mySecondClosure){
     var showMyWork = myFirstClosure;
     var superFunc = mySecondClosure;
-    // console.log(superFunc);
 
     function whoLikesTurtles(superFunc){
       $('.second-closure').click(function(){
