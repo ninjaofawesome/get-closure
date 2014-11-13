@@ -17,10 +17,17 @@ $(document).ready(function(){
   };
 
   function showCode(myFirstClosure){
-    var myFunc = myFirstClosure;
 
-    $('.closure').html('<pre>' + myFunc + '</pre>');
+    $('button').click(function(){
+      var myFunc = myFirstClosure;
+      $('.closure').toggle('slow', function(){
+        $(this).fadeIn().html('<pre>' + myFunc + '</pre>');
+      });
+    });
+
   }
+
+
   showCode(myFirstClosure);
 });
 
