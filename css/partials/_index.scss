@@ -3,12 +3,21 @@
   height: 100%;
   min-height: 300px;
   background-color: $gray;
-  text-align: center;
   .headline{
     color: $white;
   }
-  .centered{
+  .button-box{
+    max-width: 300px;
+    height: 50px;
     margin: 0 auto;
+  }
+  .centered{
+    text-align: center;
     padding-top: 2%;
+  }
+  .center-button{
+    width: 100px;
+    margin: 2% 35%;
+    text-align: center;
   }
 }

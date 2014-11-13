@@ -16,11 +16,12 @@ $(document).ready(function(){
     sayHello(whoIsIt);
   };
 
-  function showCode(){
-    var code = myFirstClosure();
-    $('.closure').html('<pre>' + code + '</pre>');
+  function showCode(myFirstClosure){
+    var myFunc = myFirstClosure;
+
+    $('.closure').html('<pre>' + myFunc + '</pre>');
   }
-  showCode();
+  showCode(myFirstClosure);
 });
 
 
