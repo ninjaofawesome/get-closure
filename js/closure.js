@@ -17,13 +17,17 @@ $(document).ready(function(){
   };
 
   function showCode(myFirstClosure){
+    var myFunc = myFirstClosure;
 
-    $('button').click(function(){
-      var myFunc = myFirstClosure;
-      $('.closure').toggle('slow', function(){
-        $(this).fadeIn().html('<pre>' + myFunc + '</pre>');
+    function whoAmI(myFunc){
+      $('button').click(function(){
+        $('.closure').toggle('slow', function(){
+          $(this).fadeIn().html('<pre>' + myFunc + '</pre>');
+        });
       });
-    });
+    }
+
+    whoAmI(myFunc);
 
   }
 
